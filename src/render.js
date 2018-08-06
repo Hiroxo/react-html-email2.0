@@ -13,11 +13,17 @@ const { emailRender } = require(`./emails/${ACTIVE_EMAIL_ID}/index.js`);
 //
 // 	return "Hi";
 // };
-
+var pretty = require('pretty');
 const render = async () => {
+	let start = Date.now();
 	console.info("render: ", emailRender);
-	const email = await emailRender();
+	let email = await emailRender();
+	//email = email.replace(new RegExp("&lt;", 'g'), "<").replace(new RegExp("&gt;", 'g'), ">");
+	email = email.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&amp;/g, "&");
+	pretty(email);//for dev, comment out for shorter code
+	console.info(typeof email);
 	console.info("email: ", email);
+	console.info(Date.now()-start);
 };
 
 render().then(() => console.info("Done."));
