@@ -91,6 +91,14 @@ A simplification of the `<table>` element, the workhorse of an HTML email design
 
 A subsection of a `<Box>`, essentially a `<tr><td>` unit.
 
+### `<Td>`
+
+An independent `<td>` unit.
+
+### `<Tr>`
+
+An independent `<tr>` unit.
+
 ### `<Span>`
 
 Use to assign styles to text.
