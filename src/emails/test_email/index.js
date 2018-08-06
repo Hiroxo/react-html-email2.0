@@ -4,7 +4,7 @@ import PreviewText from "./emailcomponents/PreviewText"
 import TwoColumn from "./emailcomponents/TwoColumn"
 import ThreeColumn from "./emailcomponents/ThreeColumn"
 import Button from "./emailcomponents/Button"
-import { Box, Email, Item, Span, A, renderEmail, Td, Tr, Image } from 'react-html-email'
+import { Box, Email, Item, Span, A, renderEmail, Td, Tr, Image } from './emailcomponents/lib'
 import Headcss from "./emailcomponents/Headcss"
 import HeaderExtra from "./emailcomponents/HeaderExtra"
 import BodyTop from "./emailcomponents/BodyTop"
@@ -150,11 +150,19 @@ export const emailRender = async () => {
 
 				</Box>
 			</div>
-
+			<div>
+				<Box>
+					<TwoColumn style={{maxWidth:'290px', width:'auto', valign:'top'}}>
+						<Image alt={image1.alt} src={image1.src} height="150" width="225" style={{}}/>
+						<Button href={cta1.href} height="150" width="225" style={{}} bgcolor='red' valign="middle" color='white'>
+							Red Button
+						</Button>
+					</TwoColumn>
+				</Box>
+			</div>
 			<Item>
 				{footer}
 			</Item>
-
 		</Email>
 	);
 	return emailHtml;

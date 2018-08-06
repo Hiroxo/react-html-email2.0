@@ -1,9 +1,8 @@
 import React from 'react'
-import { Item } from 'react-html-email'
+import { Item } from './lib'
 
-const Border = props => {
-	const style = {backgroundColor:props.bgcolor,borderCollapse:'collapse',  msoLineHeightRule: 'exactly', lineHeight:'1px' }
-
+const Border = ({bgcolor}) => {
+	const style = {backgroundColor:bgcolor,borderCollapse:'collapse',  msoLineHeightRule: 'exactly', lineHeight:'1px' }
 	return(
 			<Item height='1' style={style} valign='top' width='600'>
 			&#60;&#33;&#45;&#45;&#91;if gte mso 15&#93;&#62;
